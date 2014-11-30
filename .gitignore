@@ -1,2 +1,4 @@
 node_modules
 dist
+test/test-echo-browser.js
+test/test-echo-es5.js

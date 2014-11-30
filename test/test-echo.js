@@ -1,5 +1,6 @@
 import test from 'tape'
 import echo from '../'
+import report from 'browserify-tape-spec'
 
 test('exists', (t)=> {
   t.ok(test, 'test lib correctly imported')
@@ -17,3 +18,4 @@ test('can echo', (t)=> {
   t.end()
 })
 
+if (process.browser) test.createStream().pipe(report('out'))
