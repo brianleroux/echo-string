@@ -1,0 +1,31 @@
+{
+  "name": "echo-string",
+  "version": "1.0.0",
+  "description": "example ES6 module; consumable by via npm by any ES5 targetting lang impl",
+  "main": "dist/index.js",
+  "devDependencies": {
+    "6to5": "^1.14.5",
+    "tap-spec": "^2.1.0",
+    "tape": "^3.0.3"
+  },
+  "scripts": {
+    "compile": "6to5 --modules commonInterop src --out-file dist/index.js",
+    "debug": "6to5 --source-maps-inline --modules commonInterop src --out-file dist/index.js",
+    "test": "npm run compile && 6to5-node test/test-echo.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brianleroux/echo-string"
+  },
+  "keywords": [
+    "echo",
+    "string",
+    "es6"
+  ],
+  "author": "Brian LeRoux <b@brian.io>",
+  "license": "Apache2",
+  "bugs": {
+    "url": "https://github.com/brianleroux/echo-string/issues"
+  },
+  "homepage": "https://github.com/brianleroux/echo-string"
+}
