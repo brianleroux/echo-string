@@ -4,9 +4,8 @@ a module for echoing a value as a string
 
 ## install
 
-```bash
-npm i echo-string
-```
+    npm i echo-string
+
 ### usage
 
 You can consume this module from vanilla Node:
