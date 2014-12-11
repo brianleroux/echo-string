@@ -35,6 +35,6 @@ console.log(echo('hello'))
 ### contrib notes
 
 - `npm test` builds and runs the tests
-- `npm run build` builds `./src` to `./dist/index.js`
+- `npm run compile` builds `./src` to `./dist/index.js`
 - `npm run debug` compiles `./src` with sourcemaps to `./dist/index.js`
 - `npm publish .` would publish `./dist/index.js` to the configured npm registry
