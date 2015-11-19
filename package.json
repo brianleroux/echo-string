@@ -12,7 +12,7 @@
     "tape": "^3.0.3"
   },
   "scripts": {
-    "compile": "mkdir dist && 6to5 --modules commonInterop src --out-file dist/index.js",
+    "compile": "mkdir -p dist && 6to5 --modules commonInterop src --out-file dist/index.js",
     "debug": "6to5 --source-maps-inline --modules commonInterop src --out-file dist/index.js",
     "test": "npm run compile && 6to5-node test/test-echo.js | tap-spec",
     "test-es5-compile": "6to5 --modules commonInterop test/test-echo.js --out-file test/test-echo-es5.js",
