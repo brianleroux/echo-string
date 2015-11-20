@@ -4,18 +4,24 @@
   "description": "example ES6 module; consumable by via npm by any ES5 targetting lang impl",
   "main": "dist/index.js",
   "devDependencies": {
-    "6to5": "^1.14.5",
-    "6to5-browserify": "^1.3.0",
+    "babel-cli": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babelify": "^7.2.0",
     "browserify": "^6.3.3",
     "browserify-tape-spec": "^1.1.2",
     "tap-spec": "^2.1.0",
     "tape": "^3.0.3"
   },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "scripts": {
-    "compile": "6to5 --modules commonInterop src --out-file dist/index.js",
-    "debug": "6to5 --source-maps-inline --modules commonInterop src --out-file dist/index.js",
-    "test": "npm run compile && 6to5-node test/test-echo.js | tap-spec",
-    "test-es5-compile": "6to5 --modules commonInterop test/test-echo.js --out-file test/test-echo-es5.js",
+    "compile": "babel src --out-file dist/index.js",
+    "debug": "babel --source-maps inline src --out-file dist/index.js",
+    "test": "npm run compile && babel-node test/test-echo.js | tap-spec",
+    "test-es5-compile": "babel --source-maps inline test/test-echo.js --out-file test/test-echo-es5.js",
     "test-browserify": "browserify test/test-echo-es5.js > test/test-echo-browser.js",
     "testb": "npm run test-es5-compile && npm run test-browserify && open test/index.html"
   },
